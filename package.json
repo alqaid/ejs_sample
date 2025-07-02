@@ -1,0 +1,17 @@
+{
+  "name": "ejs_sample",
+  "version": "1.0.0",
+  "description": "Ejemplo desarrollo y publicación ejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: No se especificó test\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,17 @@
+<!-- views/products.ejs -->
+<%- include('partials/header') %>
+
+<main>
+    <h1><%= title %></h1>
+    <div class="products">
+        <% products.forEach(product => { %>
+            <div class="product">
+                <h2><%= product.name %></h2>
+                <p>Price: ₹<%= product.price %></p>
+            </div>
+        <% }) %>
+    </div>
+    
+</main>
+
+<%- include('partials/footer') %>
