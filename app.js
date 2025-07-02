@@ -1,5 +1,7 @@
 // app.js
 const express = require('express');
+const path = require('path')
+const port = process.env.PORT || 3000
 const app = express();
 
 // Set up EJS as the templating engine
@@ -29,7 +31,19 @@ app.get('/', (req, res) => {
     });
 });
 
+const server = app.listen(port, () => {
+  console.log(`Listening on ${port}`)
+})
+process.on('SIGTERM', async () => {
+  console.log('SIGTERM signal received: gracefully shutting down')
+  if (server) {
+    server.close(() => {
+      console.log('HTTP server closed')
+    })
+  }
+})
+
 // Start the Express app
-app.listen(3000, () => {
+/*app.listen(3000, () => {
     console.log('Server running on http://localhost:3000');
-});
+});*/
