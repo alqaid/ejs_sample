@@ -1,0 +1,20 @@
+<!-- views/products.ejs -->
+  
+ 
+
+<%- include('partials/header') %>
+<main>
+    <h1><%= title %></h1>
+    <div class="products">
+        <h3>Recogidas <%= datos.length %> muestras.</h3>
+
+         <% datos.forEach(product => {                %>
+            <div class="product">
+                <p><%= product.fecha %> : <%= product.valor %></p>
+            </div>
+        <% }) %>
+    </div>
+    
+</main>
+
+<%- include('partials/footer') %>
